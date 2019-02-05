@@ -13,10 +13,16 @@ This is a work in progress. will publish all the features as we go
 Happy coding!
 
 Next steps:
-- Billing creation / print / update
+- Billing creation / print / update - Done!
 - Work with files (delete basically)
 - Private access to panel
 - Work also with Postgre
 - Use API REST for export data in PDF and XLS
 - And what I can think of.....
 
+NEW FEATURES 05-02-2019
+- Billing creation
+- Billing details
+- Models Association
+- Bill PDF Print
+- Using font-awesome icons
