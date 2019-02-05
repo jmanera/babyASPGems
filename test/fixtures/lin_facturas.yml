@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NumFactura: 1
+  Concepto: MyText
+  Cantidad: 9.99
+  Precio: 9.99
+  Total: 9.99
+
+two:
+  NumFactura: 1
+  Concepto: MyText
+  Cantidad: 9.99
+  Precio: 9.99
+  Total: 9.99

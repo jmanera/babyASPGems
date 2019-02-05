@@ -1,0 +1,76 @@
+
+<div class="row col-md-12">
+	<div class="col-md-2">
+	</div>
+	<div class="row col-md-8">
+		<div class="col-md-6">
+			<h3>Update Bill: <%= @factura.NumFactura %></h3>
+			<%= bootstrap_form_for @factura do |f| %>
+			  <%= f.number_field :NumFactura %>
+			  <%= f.date_field :Fecha %>
+			  <%= f.collection_select :Cliente, Cliente.order(:Nombre), :idCliente, :Nombre, include_blank: false %>
+			  <%= f.submit "Update" %>
+			<% end %>
+		</div>
+		<div class="col-md-6">
+			<h4>New Bill Detail</h4>
+			<!--<form class="new_linea" id="new_factura" role="form" accept-charset="UTF-8"">-->
+				<div class="form-group"><label for="concepto">Concepto</label><input class="form-control" type="text" name="concepto" id="concepto"></div>
+				<div class="form-group"><label for="cantidad">Cantidad</label><input class="form-control" type="number" name="cantidad" id="cantidad"></div>
+				<div class="form-group"><label for="cantidad">Precio</label><input class="form-control" type="number" name="precio" id="precio"></div>
+				<button class="btn btn-secondary" onclick="saveLine()">Save Line</button>
+			<!--</form>-->
+		</div>
+		<!-- LINEAS DE LA FACTURA -->
+		<table id="lineasFactura" class="table table-striped table-bordered" cellspacing="0" width="50%">
+			<thead>
+				<tr>
+					<td class="th-sm">Concept</td>
+					<td class="th-sm">Quantity</td>
+					<td class="th-sm">Price</td>
+					<td class="th-sm">Total</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @lineas.each do |l| %>
+					<tr>
+						<td><%= l.Concepto %></td>
+						<td><%= l.Cantidad %></td>
+						<td><%= l.Precio %></td>
+						<td><%= l.Total %></td>
+						<td>
+							<%= link_to '<i class="fas fa-trash"></i>'.html_safe, lin_factura_path(l), method: :delete, data: { confirm: 'Are you sure?' } %> 							
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-2">
+	</div>	
+</div>
+
+<script>
+	function saveLine(){
+		var concepto = $('#concepto').val();
+		var cantidad = $('#cantidad').val();
+		var precio = $('#precio').val();
+		var num_factura = <%= @factura.id %>;
+
+		$.ajax({
+          type: "POST", 
+          url: "/lin_factura/createRemoto",
+          data: { NumFactura: num_factura, Concepto: concepto, Cantidad: cantidad, Precio: precio },
+          dataType: "json",
+          success: function(response) { 
+          	alert("Saved correctly"); 
+          	location.reload();
+          },
+          error: function(xhr, ajaxOptions, thrownError) { alert(xhr.responseText); }
+        });
+        return false;
+	}
+
+
+	
+</script>

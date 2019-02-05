@@ -23,9 +23,9 @@
 						<td><%= c.Nombre %></td>
 						<td><%= c.CIF %></td>
 						<td>
-							<%= link_to 'Update', edit_cliente_path(c), method: :get %>
-							<%= link_to 'Delete', cliente_path(c), method: :delete, data: { confirm: 'Are you sure?' } %> 
-							<%= link_to 'View', cliente_path(c) %>
+							<%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_cliente_path(c), method: :get %>
+							<%= link_to '<i class="fas fa-trash"></i>'.html_safe, cliente_path(c), method: :delete, data: { confirm: 'Are you sure?' } %> 
+							<%= link_to '<i class="fas fa-eye"></i>'.html_safe, cliente_path(c) %>							
 						</td>
 					</tr>
 				<% end %>

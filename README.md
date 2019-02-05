@@ -1,3 +1,5 @@
+####### UNDER CONSTRUCTION #######
+
 # README
 
 babyASPGems is a little project to Learn Rails 5
@@ -6,7 +8,7 @@ In this project we use all the layers of MVC architecture and work with sqlite, 
 
 Also use the XLS and PDF export of lists and more....
 
-This project is grow up, please be patient. I publish all features in the future.
+This is a work in progress. will publish all the features as we go
 
 Happy coding!
 

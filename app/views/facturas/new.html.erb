@@ -1,0 +1,16 @@
+
+<div class="row col-md-12">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-8">
+		<h3>New Bill</h3>
+		<%= bootstrap_form_for @factura do |f| %>
+		  <%= f.number_field :NumFactura %>
+		  <%= f.date_field :Fecha %>
+		  <%= f.collection_select :Cliente, Cliente.order(:Nombre), :idCliente, :Nombre, include_blank: false %>
+		  <%= f.submit "Create" %>
+		<% end %>
+	</div>
+	<div class="col-md-2">
+	</div>	
+</div>

@@ -12,7 +12,6 @@ class ClientesController < ApplicationController
 	    end
 	end
 
-
 	def index
 		@clientes = Cliente.all
 	end

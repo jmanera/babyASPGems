@@ -1,0 +1,2 @@
+module LinFacturaHelper
+end
