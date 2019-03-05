@@ -15,7 +15,7 @@ gem 'wkhtmltopdf-binary'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -47,10 +47,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 
 
+# Annotate Rails classes with schema and routes info
+gem 'annotate'
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Ruby static code analyzer and formatter, based on the community Ruby style guide. https://docs.rubocop.org
+  gem 'rubocop'
 end
 
 group :development do
