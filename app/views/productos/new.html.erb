@@ -1,0 +1,16 @@
+<div class="row col-md-12">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <h3>New Product</h3>
+    <%= bootstrap_form_for @pr do |f| %>
+      <%= f.text_field :Nombre %>
+      <%= f.text_field :Descripcion %>
+      <%= f.text_field :Stock %>
+      <%= f.text_field :Precio_Unitario %>
+      <%= f.submit "Create" %>
+    <% end %>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>

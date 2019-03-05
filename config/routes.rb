@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   match '/facturas/:id/printPDF' => 'facturas#printPDF', :via => :get, :as => :facturas_printPDF
   resources :facturas
 
-
+  # Carga todos los metodos REST para la tabla productos
+  resources :productos
 
   match 'lin_factura/createRemoto' => 'lin_factura#createRemoto', :via => :post
   resources :lin_facturas

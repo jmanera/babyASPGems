@@ -1,0 +1,17 @@
+<div class="row col-md-12">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-8">
+		<h3>Product <%= @producto.Nombre %> data</h3>
+		<ul class="list-group">
+		  <li class="list-group-item">Name: <%= @producto.Nombre %></li>
+		  <li class="list-group-item">Description: <%= @producto.Descripcion %></li>
+      <li class="list-group-item">Stock: <%= @producto.Stock %></li>
+      <li class="list-group-item">Price: <%= @producto.Precio_Unitario %></li>
+    </ul>
+		<%= link_to '<button type="button" class="btn btn-primary">New Product</button>'.html_safe, new_producto_path %>
+		<%= link_to '<button type="button" class="btn btn-primary">View All</button>'.html_safe, productos_path %>
+	</div>
+	<div class="col-md-2">
+	</div>	
+</div>
